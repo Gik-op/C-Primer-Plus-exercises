@@ -10,9 +10,8 @@ struct debts
 template <typename T>            // template A
 T SumArray(T arr[], int n);
 
-/*template <typename T>            // template B
-T SumArray(T *arr[], int n);*/
-double SumArray(double *arr[], int n);//why can't use explicit specialization here,delete template<>,then it goes well
+template <typename T>            // template B
+T SumArray(T *arr[], int n);
 
 int main()
 {
@@ -48,22 +47,12 @@ T SumArray(T arr[], int n)
     return sum;
 }
 
-/*template <typename T>            // template B
+template <typename T>
 T SumArray(T *arr[], int n)
 {
     T sum=0;
     using namespace std;
     cout << "template A\n";
-    for (int i = 0; i < n; i++)
-        sum+=*(arr[i]);
-    return sum;
-}*/
-
-double SumArray(double *arr[], int n)
-{
-    double sum=0;
-    using namespace std;
-    cout << "template B\n";
     for (int i = 0; i < n; i++)
         sum+=*(arr[i]);
     return sum;
