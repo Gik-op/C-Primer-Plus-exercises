@@ -12,6 +12,7 @@ private:
 public:
     Depositor();
     Depositor(char *nam,char *acc,double dep);
+    ~Depositor();
     void showDep() const;
     Depositor addMoney(double add);
     Depositor cutMoney(double cut);
