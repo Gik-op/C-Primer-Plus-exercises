@@ -16,6 +16,9 @@ Depositor::Depositor(char *nam,char *acc,double dep)
     money=dep;
 }
 
+Depositor::~Depositor()
+= default;
+
 void Depositor::showDep() const
 {
     using std::cout;
