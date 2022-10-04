@@ -11,6 +11,7 @@ private:
 public:
     Person(){lname="";fname[0]='\0';}
     Person(const std::string &ln,const char *fn="Heyyou");
+    ~Person();
     void Show()const;        //firstname lastname format
     void FormalShow()const;  //lastname,firstname format
 };
