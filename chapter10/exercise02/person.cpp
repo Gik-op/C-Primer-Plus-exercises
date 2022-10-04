@@ -9,6 +9,9 @@ Person::Person(const std::string &ln, const char *fn)
     strncpy(fname,fn,LIMIT-1);
 }
 
+Person::~Person()
+=default;
+
 void Person::Show() const
 {
     using std::cout;
