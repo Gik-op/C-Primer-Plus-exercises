@@ -15,11 +15,18 @@ int main()
     {
         cout<<"Please enter a number to add to the list(q to quit):";
         cin.getline(input,MAX);
-        num=strtol(input,NULL,10);//存在负数的数值溢出问题
-        if(num<=0&&!(isdigit(input[0])))//考虑增加鲁棒性验证
+        num=strtol(input,NULL,10);
+        while(num<0||(!(isdigit(input[0])))&&input[0]!='q')
+        {
+            cout<<"Wrong input!Input again:";
+            cin.getline(input,MAX);
+            num=strtol(input,NULL,10);
+        }
+        if(input[0]=='q')
             break;
         list.addItem(num);
     }
+    cout<<"Here are the list.\n";
     if(list.isempty())
         cout<<"The list is empty.\n";
     else
