@@ -16,9 +16,9 @@ int main()
         cout<<"Please enter a number to add to the list(q to quit):";
         cin.getline(input,MAX);
         num=strtol(input,NULL,10);
-        while(num<0||(!(isdigit(input[0])))&&input[0]!='q')
+        while((!(isdigit(input[0])))&&input[0]!='q')
         {
-            cout<<"Wrong input!Input again:";
+            cout<<"Wrong input!Input again(eg.245,16 or q to quit):";
             cin.getline(input,MAX);
             num=strtol(input,NULL,10);
         }
