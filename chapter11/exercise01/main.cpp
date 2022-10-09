@@ -1,5 +1,4 @@
 // randwalk.cpp -- using the Vector class
-// compile with the vect.cpp file
 #include <iostream>
 #include <cstdlib>      // rand(), srand() prototypes
 #include <ctime>        // time() prototype
