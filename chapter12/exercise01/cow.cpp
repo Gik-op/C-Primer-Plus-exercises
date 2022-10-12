@@ -24,7 +24,6 @@ Cow::Cow(const char *nm,const char *ho,double wt)
 Cow::Cow(const Cow &c)
 {
     int len=strlen(c.hobby);
-    delete []hobby;
     strcpy(name,c.name);
     hobby=new char[len+1];
     strcpy(hobby,c.hobby);
