@@ -16,8 +16,7 @@ Cow::Cow(const char *nm,const char *ho,double wt)
     strncpy(name,nm,19);
     name[19]='\0';
     hobby=new char[len+1];
-    strncpy(hobby,ho,len);
-    hobby[len]='\0';
+    strncpy(hobby,ho,len+1);
     weight=wt;
 }
 
