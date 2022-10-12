@@ -3,6 +3,21 @@
 
 #define MAX 256
 
+void show(Cow &c1,Cow &c2)
+{
+    std::cout<<"Cow #1:\n";
+    c1.showCow();
+    std::cout<<"Cow #2:\n";
+    c2.showCow();
+}
+void change(Cow &c1,Cow &c2)
+{
+    Cow temp;
+    temp=c1;
+    c1=c2;
+    c2=temp;
+}
+
 int main()
 {
     using namespace std;
@@ -16,15 +31,8 @@ int main()
     cout<<"Please enter the weight:";
     cin>>wt;
     Cow two(name,hobby,wt);
-    cout<<"Cow #1:";
-    one.showCow();
-    cout<<"Cow #2:";
-    two.showCow();
-    two=one;
-    cout<<"Cow #1:";
-    one.showCow();
-    cout<<"Cow #2:";
-    two.showCow();
-
+    show(one,two);
+    change(one,two);
+    show(one,two);
     return 0;
 }
