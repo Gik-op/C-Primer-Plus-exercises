@@ -32,6 +32,7 @@ public:
     friend istream & operator>>(istream & is, String & st);
 // new function
     friend String operator+(String &st1,String &st2);
+    friend String operator+(const char *s,const String &st); //complex but useful
     String & stringlow();
     String & stringup();
     int has(char c) const;
