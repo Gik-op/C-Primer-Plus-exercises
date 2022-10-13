@@ -121,6 +121,14 @@ String operator+(String &st1,String &st2)
     return one;
 }
 
+String operator+(const char *s,const String &st)
+{
+    String one(s);
+    strcat(one.str,st.str);
+    one.len+=st.len;
+    return one;
+}
+
 String & String::stringlow()
 {
     for(int i=0;i<len;i++)
