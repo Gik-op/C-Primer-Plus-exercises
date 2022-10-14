@@ -83,7 +83,7 @@ int main()
         cout.setf(ios_base::fixed, ios_base::floatfield);
         cout << (double) sum_line / cyclelimit << endl;
         cout << " average wait time: "
-             << (double) line_wait / served << " minutes\n";
+             << average_wait << " minutes\n";
     }
     else
         cout << "No customers!\n";
