@@ -10,23 +10,23 @@ int main()
     using std::endl;
 
     DMA * p_clients[MEM];
-    std::string temp;
+    std::string temp,rate,kind;
     int tempR;
-    char kind;
 
     for (int i = 0; i < MEM; i++)
     {
         cout << "Enter DMA's label: ";
         getline(cin,temp);
         cout << "Enter DMA's rating: ";
-        cin >> tempR;
+        getline(cin,rate);
+        tempR = strtol((char *)rate.data(),NULL,10);
         cout << "Enter 1 for baseDMA, "
              << "2 for lacksDMA or 3 for hasDMA: ";
-        while ((cin >> kind).get() && (kind != '1' && kind != '2' && kind !='3'))
+        while ((getline(cin,kind)) && (kind[0] != '1' && kind[0] != '2' && kind[0] !='3'))
             cout <<"Enter 1,2 or 3: ";
-        if (kind == '1')
+        if (kind[0] == '1')
             p_clients[i] = new baseDMA((char *)temp.data(), tempR);
-        else if(kind == '2')
+        else if(kind[0] == '2')
         {
             std::string color;
             cout << "Enter the color: ";
@@ -40,8 +40,6 @@ int main()
             getline(cin,style);
             p_clients[i] = new hasDMA((char *)style.data(),(char *)temp.data(), tempR);
         }
-        while (cin.get() != '\n')
-            continue;
     }
     cout << endl;
     for (int i = 0; i < MEM; i++)
