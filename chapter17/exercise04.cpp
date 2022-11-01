@@ -27,13 +27,12 @@ int main()
 
     while(!fin_1.eof()&&!fin_2.eof())
     {
-        string line1,line2,final_line;
+        string line1,line2;
         getline(fin_1,line1);
         getline(fin_2,line2);
-        final_line = line1.append(" ") + line2;
-        fout << final_line << endl;
+        fout << line1 << " " << line2 << endl;
     }
-    if(!fin_1.eof())    // 最后一行行首多了一个空格
+    if(!fin_1.eof())
     {
         string line;
         getline(fin_1,line);
