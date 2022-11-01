@@ -26,8 +26,8 @@ int main(int argc, char ** argv)
         }
         char ch;
         cout << "Begin to copy.\n";
-        while(fin >> ch)
-            fout << ch;
+        while(fin.get(ch))
+            fout.put(ch);
         fin.close();
         fout.close();
         cout<<"Done!\n";
