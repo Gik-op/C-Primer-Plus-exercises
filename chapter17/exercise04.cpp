@@ -25,26 +25,25 @@ int main()
     if(!fout.is_open())
         cout<<"Can't open the file "<<source1<<".\n";
 
-    while(!fin_1.eof()&&!fin_2.eof())
+    while(fin_1.peek()!=EOF&&fin_2.peek()!=EOF)
     {
         string line1,line2;
         getline(fin_1,line1);
         getline(fin_2,line2);
         fout << line1 << " " << line2 << endl;
     }
-    if(!fin_1.eof())
+    while(!fin_1.eof())
     {
         string line;
         getline(fin_1,line);
         fout << line << endl;
     }
-    if(!fin_2.eof())
+    while(!fin_2.eof())
     {
         string line;
         getline(fin_2,line);
         fout << line << endl;
     }
-
     fin_1.close();
     fin_2.close();
     fout.close();
