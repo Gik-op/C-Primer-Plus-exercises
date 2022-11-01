@@ -1,39 +1,36 @@
 #include <iostream>
 #include <fstream>
 
-// Can't run
-
 int main(int argc, char ** argv)
 {
     using namespace std;
-    char *source,*target;
     if(argc<3)
     {
         cout<<"No enough parameters!\n";
-        exit(1);
     }
-    //  这里存在问题，似乎无法运行出来
-    source=argv[1];
-    target=argv[2];
-    ifstream fin;
-    ofstream fout;
-    fin.open(source);
-    if(!fin.is_open())
+    else
     {
-        cout<<"Can't open the file "<<source<<".\n";
-        exit(EXIT_FAILURE);
+        ifstream fin(argv[1]);
+        ofstream fout(argv[2]);
+        if(!fin.is_open())
+        {
+            cout<<"Can't open the file "<<argv[1]<<".\n";
+            fin.close();
+            exit(EXIT_FAILURE);
+        }
+        if(!fout.is_open())
+        {
+            cout<<"Can't open the file "<<argv[2]<<".\n";
+            fout.close();
+            exit(EXIT_FAILURE);
+        }
+        char ch;
+        cout << "Begin to copy.\n";
+        while(fin >> ch)
+            fout << ch;
+        fin.close();
+        fout.close();
+        cout<<"Done!\n";
     }
-    fout.open(target);
-    if(!fout.is_open())
-    {
-        cout<<"Can't open the file "<<target<<".\n";
-        exit(EXIT_FAILURE);
-    }
-    char ch;
-    while(fin.get(ch))
-        fout.put(ch);
-    fin.close();
-    fout.close();
-    cout<<"Done!\n";
     return 0;
 }
